@@ -24,6 +24,8 @@
 
 #define  TASK_STK_SIZE    128
 #define  TASK_START_PRIO    5
+#define  MEM_TEST_BLK_SIZE  32
+#define  MEM_TEST_NBLKS     5
 
 /*
 *********************************************************************************************************
@@ -32,6 +34,11 @@
 */
 
 OS_STK        AppStartTaskStk[TASK_STK_SIZE];
+
+static INT8U MemTestPool[MEM_TEST_NBLKS][MEM_TEST_BLK_SIZE] __attribute__((aligned(4)));
+static OS_MEM *OSMemPtr;
+static INT8U *MemBlkPtr;
+static INT8U OSMemTestErr;
 
 /*
 *********************************************************************************************************
@@ -43,6 +50,7 @@ static  void  AppStartTask(void *p_arg);
 static  void  Task0(void *p_arg);
 static  void  Task1(void *p_arg);
 static  void  Task2(void *p_arg);
+static  void memTest(void);
 
 OS_STK  Task0Stk [256];
 OS_STK  Task1Stk [256];
@@ -102,6 +110,51 @@ void main(int argc, char *argv[])
 
     OSStart();                             /* Start multitasking (i.e. give control to uC/OS-II)                               */
 }
+
+static void memTest(void)
+{
+    void *block1;
+    void *block2;
+
+    OSMemPtr = OSMemCreate(&MemTestPool, MEM_TEST_NBLKS, MEM_TEST_BLK_SIZE, &OSMemTestErr);
+
+    if (OSMemPtr == (OS_MEM *)0) {
+        printf("OSMemCreate failed: err=%u\n", OSMemTestErr);
+        return;
+    }
+
+    printf("[MemTest] Create: free=%lu\n",
+           (unsigned long)OSMemPtr->OSMemNFree);
+
+    block1 = OSMemGet(OSMemPtr, &OSMemTestErr);
+    printf("[MemTest] Get #1: block=%p err=%u free=%lu\n",
+           block1,
+           OSMemTestErr,
+           (unsigned long)OSMemPtr->OSMemNFree);
+
+    block2 = OSMemGet(OSMemPtr, &OSMemTestErr);
+    printf("[MemTest] Get #2: block=%p err=%u free=%lu\n",
+           block2,
+           OSMemTestErr,
+           (unsigned long)OSMemPtr->OSMemNFree);
+
+    if (block1 != (void *)0) {
+        OSMemTestErr = OSMemPut(OSMemPtr, block1);
+        printf("[MemTest] Put #1: err=%u free=%lu, next free=0x%x\n",
+               OSMemTestErr,
+               (unsigned long)OSMemPtr->OSMemNFree,
+               OSMemPtr->OSMemFreeList);
+    }
+
+    if (block2 != (void *)0) {
+        OSMemTestErr = OSMemPut(OSMemPtr, block2);
+        printf("[MemTest] Put #2: err=%u free=%lu, next free=0x%x\n",
+               OSMemTestErr,
+               (unsigned long)OSMemPtr->OSMemNFree,
+               OSMemPtr->OSMemFreeList);
+    }
+}
+
 /*$PAGE*/
 /*
 *********************************************************************************************************
@@ -124,6 +177,8 @@ void  AppStartTask (void *p_arg)
 #if OS_TASK_STAT_EN > 0
     OSStatInit();                                /* Determine CPU capacity                                                     */
 #endif
+
+    memTest();
     
     while (1)                                   /* Task body, always written as an infinite loop.                             */
     {

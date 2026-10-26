@@ -5,6 +5,21 @@ ARM Versatile/AB (ARM926EJ-S) μCOS-II V286u.
 
 µC/OS-II is based on µC/OS, The Real-Time Kernel which was first published in 1992. Thousands of people around the world are using µC/OS in all kinds of applications such as cameras, medical instruments, musical instruments, engine controls, network adapters, highway telephone call boxes, ATM machines, industrial robots, and many more. Nu merous colleges and Universities have also used µC/OS to teach students about real-time systems.
 
+# Prerequisite
+- Environment : Ubuntu 22.04
+```shell=
+sudo apt update
+
+sudo apt install -y \
+    build-essential \
+    git \
+    make \
+    gcc-arm-none-eabi \
+    binutils-arm-none-eabi \
+    qemu-system-arm \
+    gdb-multiarch
+```
+
 # Toolchain
 ## linux
 gcc-arm-none-eabi-4_9-2015q3-20150921-linux

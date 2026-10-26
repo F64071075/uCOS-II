@@ -15,7 +15,7 @@
 * LICENSING TERMS:
 * ---------------
 *   uC/OS-II is provided in source form for FREE evaluation, for educational use or for peaceful research.
-* If you plan on using  uC/OS-II  in a commercial product you need to contact Micriµm to properly license
+* If you plan on using  uC/OS-II  in a commercial product you need to contact Micriï¿½m to properly license
 * its use in your product. We provide ALL the source code for your convenience and to help you experience
 * uC/OS-II.   The fact that the  source is provided does  NOT  mean that you can use it without  paying a
 * licensing fee.
@@ -27,91 +27,91 @@
 
 
                                        /* ---------------------- MISCELLANEOUS ----------------------- */
-//Ó¦ÓÃ³ÌÐò¹´×Óº¯Êý                      
+//Ó¦ï¿½Ã³ï¿½ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½                      
 #define OS_APP_HOOKS_EN           0    /* Application-defined hooks are called from the uC/OS-II hooks */
 
-//²ÎÊý¼ì²é
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_ARG_CHK_EN             1    /* Enable (1) or Disable (0) argument checking                  */
 
-//CPU¹´×Óº¯Êý
+//CPUï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½
 #define OS_CPU_HOOKS_EN           1    /* uC/OS-II hooks are found in the processor port files         */
 
-//µ÷ÊÔ
+//ï¿½ï¿½ï¿½ï¿½
 #define OS_DEBUG_EN               0    /* Enable(1) debug variables                                    */
 
-//¶àÊÂ¼þµÈ´ý
+//ï¿½ï¿½ï¿½Â¼ï¿½ï¿½È´ï¿½
 #define OS_EVENT_MULTI_EN         1    /* Include code for OSEventPendMulti()                          */
 
-//ÊÂ¼þÃû³¤
+//ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_EVENT_NAME_SIZE        8    /* Determine the size of the name of a Sem, Mutex, Mbox or Q    */
 
-//×îµÍÓÅÏÈ¼¶
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½
 #define OS_LOWEST_PRIO           20    /* Defines the lowest priority that can be assigned ...         */
                                        /* ... MUST NEVER be higher than 254!                           */
-//×î´óÊÂ¼þÊý
+//ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½
 #define OS_MAX_EVENTS            20    /* Max. number of event control blocks in your application      */
 
-//×î´óÆìÓïÊý(ÓÃµÃ²»¶à)
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ÃµÃ²ï¿½ï¿½ï¿½)
 #define OS_MAX_FLAGS              1    /* Max. number of Event Flag Groups    in your application      */
 
-//×î´óÄÚ´æ·ÖÇøÊý(ÓÃµÃ²»¶à)
-#define OS_MAX_MEM_PART           1    /* Max. number of memory partitions                             */
+//ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ÃµÃ²ï¿½ï¿½ï¿½)
+#define OS_MAX_MEM_PART           3    /* Max. number of memory partitions                             */
 
-//×î´óÏûÏ¢¶ÓÁÐÊý(LwipÒªÓÃÏûÏ¢¶ÓÁÐ)
+//ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(LwipÒªï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½)
 #define OS_MAX_QS                10    /* Max. number of queue control blocks in your application      */
 
-//×î´óÈÎÎñÊý
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_MAX_TASKS             15    /* Max. number of tasks in your application, MUST be >= 2       */
 
-//µ÷¶ÈÆ÷ÉÏËø
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_SCHED_LOCK_EN          1    /* Include code for OSSchedLock() and OSSchedUnlock()           */
 
-//ÏµÍ³¶¨Ê±Æ÷²½½ø
+//ÏµÍ³ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_TICK_STEP_EN           0    /* Enable tick stepping feature for uC/OS-View                  */
 
-//ÏµÍ³¶¨Ê±Æ÷ÆµÂÊ
+//ÏµÍ³ï¿½ï¿½Ê±ï¿½ï¿½Æµï¿½ï¿½
 #define OS_TICKS_PER_SEC        100    /* Set the number of ticks in one second                        */
 
 
                                        /* --------------------- TASK STACK SIZE ---------------------- */
-/* ¶¨Ê±Æ÷\Í³¼Æ\¿ÕÏÐÈÎÎñ¶ÑÕ»´óÐ¡ */                                       
+/* ï¿½ï¿½Ê±ï¿½ï¿½\Í³ï¿½ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½Ð¡ */                                       
 #define OS_TASK_TMR_STK_SIZE     64    /* Timer      task stack size (# of OS_STK wide entries)        */
 #define OS_TASK_STAT_STK_SIZE    64    /* Statistics task stack size (# of OS_STK wide entries)        */
 #define OS_TASK_IDLE_STK_SIZE    64    /* Idle       task stack size (# of OS_STK wide entries)        */
 
 
                                        /* --------------------- TASK MANAGEMENT ---------------------- */
-//¿É¸Ä±äÈÎÎñÓÅÏÈ¼¶                                       
+//ï¿½É¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¼ï¿½                                       
 #define OS_TASK_CHANGE_PRIO_EN    1    /*     Include code for OSTaskChangePrio()                      */
 
-//ÈÎÎñ¿É´´½¨
+//ï¿½ï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½
 #define OS_TASK_CREATE_EN         1    /*     Include code for OSTaskCreate()                          */
 
-//ÈÎÎñ¿ÉÀ©Õ¹´´½¨
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½
 #define OS_TASK_CREATE_EXT_EN     1    /*     Include code for OSTaskCreateExt()                       */
 
-//ÈÎÎñ¿ÉÉ¾³ý
+//ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½
 #define OS_TASK_DEL_EN            1    /*     Include code for OSTaskDel()                             */
 
-//ÈÎÎñÃû³¤
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_TASK_NAME_SIZE         8    /*     Determine the size of a task name                        */
 
 //???
 #define OS_TASK_PROFILE_EN        0    /*     Include variables in OS_TCB for profiling                */
 
-//ÈÎÎñ²éÑ¯
+//ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯
 #define OS_TASK_QUERY_EN          1    /*     Include code for OSTaskQuery()                           */
 
-//Í³¼ÆCPUÕ¼ÓÃÂÊ
+//Í³ï¿½ï¿½CPUÕ¼ï¿½ï¿½ï¿½ï¿½
 #define OS_TASK_STAT_EN           0    /*     Enable (1) or Disable(0) the statistics task             */
 
-//Í³¼ÆÈÎÎñ½øÐÐÈÎÎñ¶ÑÕ»¼ì²é
+//Í³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ»ï¿½ï¿½ï¿½
 #define OS_TASK_STAT_STK_CHK_EN   0    /*     Check task stacks from statistic task                    */
 
-//ÈÎÎñ¹ÒÆð
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_TASK_SUSPEND_EN        1    /*     Include code for OSTaskSuspend() and OSTaskResume()      */
 
-//ÈÎÎñÇÐ»»¹´×Óº¯Êý
+//ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½
 #define OS_TASK_SW_HOOK_EN        1    /*     Include code for OSTaskSwHook()                          */
 
 
@@ -119,11 +119,11 @@
 #define OS_FLAG_EN                1    /* Enable (1) or Disable (0) code generation for EVENT FLAGS    */
 #define OS_FLAG_ACCEPT_EN         1    /*     Include code for OSFlagAccept()                          */
 #define OS_FLAG_DEL_EN            1    /*     Include code for OSFlagDel()                             */
-//ÆìÓïÃû³¤
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_FLAG_NAME_SIZE         8    /*     Determine the size of the name of an event flag group    */
 #define OS_FLAG_QUERY_EN          1    /*     Include code for OSFlagQuery()                           */
 #define OS_FLAG_WAIT_CLR_EN       1    /* Include code for Wait on Clear EVENT FLAGS                   */
-//ÆìÓïÎ»Êý
+//ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½
 #define OS_FLAGS_NBITS           16    /* Size in #bits of OS_FLAGS data type (8, 16 or 32)            */
 
 
@@ -139,7 +139,7 @@
 
                                        /* --------------------- MEMORY MANAGEMENT -------------------- */
 #define OS_MEM_EN                 1    /* Enable (1) or Disable (0) code generation for MEMORY MANAGER */
-//ÄÚ´æ·ÖÇøÃû³¤
+//ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_MEM_NAME_SIZE          8    /*     Determine the size of a memory partition name            */
 #define OS_MEM_QUERY_EN           1    /*     Include code for OSMemQuery()                            */
 
@@ -180,19 +180,19 @@
 
 
                                        /* --------------------- TIMER MANAGEMENT --------------------- */
-//¶¨Ê±Æ÷Ê¹ÄÜ                                       
+//ï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½                                       
 #define OS_TMR_EN                 0    /* Enable (1) or Disable (0) code generation for TIMERS         */
 
-//×î´ó¶¨Ê±Æ÷Êý
+//ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 #define OS_TMR_CFG_MAX            4    /*     Maximum number of timers                                 */
 
-//¶¨Ê±Æ÷Ãû³¤
+//ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #define OS_TMR_CFG_NAME_SIZE      8    /*     Determine the size of a timer name                       */
 
 //???
 #define OS_TMR_CFG_WHEEL_SIZE     8    /*     Size of timer wheel (#Spokes)                            */
 
-//¶¨Ê±Æ÷ÆµÂÊ
+//ï¿½ï¿½Ê±ï¿½ï¿½Æµï¿½ï¿½
 #define OS_TMR_CFG_TICKS_PER_SEC 10    /*     Rate at which timer management task runs (Hz)            */
 
 #endif
